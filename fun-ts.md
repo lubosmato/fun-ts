@@ -49,6 +49,11 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
 <img src="./assets/hidethepain.jpeg" alt="Hide the pain" width="50%" class="center" />
 
 ---
+
+<br>
+<img src="./assets/qr.png" alt="QR" width="50%" class="center" />
+
+---
 # Úvod
 - Proč máme rádi TS? 
 - Proč vývojáři upřednostňují TS před JS?
