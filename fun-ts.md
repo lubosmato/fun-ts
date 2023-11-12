@@ -42,11 +42,15 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
   img {
     vertical-align: middle;
   }
+  code {
+    color: white;
+    background-color: #0f0f0f;
+  }
 </style>
 
 # Happy ~~(Path)~~ programátor v TypeScriptu
 
-## Recept na klidný spánek pro TypeScript programátory
+## Error handling v TypeScriptu pro klidnější spánek
 
 <br>
 <img src="./assets/hidethepain.jpeg" alt="Hide the pain" width="50%" class="center" />
