@@ -48,6 +48,8 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
   }
 </style>
 
+<!-- představit se, říct background - weby, low-level, weby -->
+
 # Happy ~~(Path)~~ programátor v TypeScriptu
 
 ## Error handling v TypeScriptu pro klidnější spánek
@@ -57,15 +59,21 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
 
 ---
 
+<!-- slidy k dispozici zde: -->
+
 <br>
 <img src="./assets/qr.png" alt="QR" width="50%" class="center" />
 
 ---
+
 # Úvod
 - Proč máme rádi TS? 
 - Proč vývojáři upřednostňují TS před JS?
 
 ---
+
+<!-- našeptávač funguje v IDE, TypeErrory vyřešeny za compile time -->
+
 # Úvod
 - Proč máme rádi TS? 
 - Proč vývojáři upřednostňují TS před JS?
@@ -75,6 +83,9 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
 `Uncaught TypeError: Cannot read/set property '...' of null/undefined` <img src="./assets/pepe.png" alt="Tak určitě" width="50px">
 
 ---
+
+<!-- pořád to je JavaScript -->
+
 # ❌ `tsconfig.json`
 
 Jak **NE**nastavit TypeScript:
@@ -131,6 +142,9 @@ Jak **NE**nastavit TypeScript:
 - Kompletní seznam: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors
 
 ---
+
+<!-- 18+ výjimek -->
+
 # Standardní výjimky JavaScriptu
 - Jak nám pomáhá TypeScript?
 - **Zachytí `SyntaxError` a `TypeError` při kompilaci!**
@@ -276,6 +290,9 @@ try {
 }
 ```
 ---
+
+<!-- zkompiluje se tento kód? -->
+
 # Happy Path: Real World scénář
 
 ```ts
