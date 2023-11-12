@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true, // zacházej s CommonJS/AMD/UMD moduly jako s ES6
+    "skipLibCheck": false, // nekontroluj typy v .d.ts souborech
+    "target": "es2022",
+    "allowJs": false,
+    "resolveJsonModule": true, // import a from "./a.json" -> souboru "bude mít typy" 
+    "moduleDetection": "force", // všechno je modul
+    "strict": true, // "vypíná" TS při false
+    "noUncheckedIndexedAccess": true, // "vypíná" TS při false
+    /* transpilace s TS: */
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+    "lib": ["es2022", "dom", "dom.iterable"]
+  }
+}

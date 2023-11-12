@@ -39,6 +39,9 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
     margin: 0 auto;
     display: block;
   }
+  img {
+    vertical-align: middle;
+  }
 </style>
 
 # Happy ~~(Path)~~ programátor v TypeScriptu
@@ -65,7 +68,7 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
 
 <img src="./assets/help.png" alt="Našeptávač" />
 
-`Uncaught TypeError: Cannot read/set property '...' of null/undefined`
+`Uncaught TypeError: Cannot read/set property '...' of null/undefined` <img src="./assets/pepe.png" alt="Tak určitě" width="50px">
 
 ---
 # ❌ `tsconfig.json`
@@ -88,7 +91,7 @@ Jak **NE**nastavit TypeScript:
 }
 ```
 
-**Od teď používáme TypeScript. To se bude všem líbit!**
+**Od teď používáme TypeScript** <img src="./assets/pepe-why.gif" alt="Tak určitě" width="50px">
 
 ---
 # ✅ `tsconfig.json`
@@ -111,7 +114,8 @@ Jak **NE**nastavit TypeScript:
   }
 }
 ```
-[Matt Pocock: TSConfig Cheat Sheet](https://www.youtube.com/watch?v=eJXVEju3XLM)
+
+[Matt Pocock: TSConfig Cheat Sheet](https://www.youtube.com/watch?v=eJXVEju3XLM) <img src="./assets/feelsgoodman.png" alt="JO vole" width="90px" />
 
 ---
 # Standardní výjimky JavaScriptu
@@ -126,7 +130,7 @@ Jak **NE**nastavit TypeScript:
 # Standardní výjimky JavaScriptu
 - Jak nám pomáhá TypeScript?
 - **Zachytí `SyntaxError` a `TypeError` při kompilaci!**
-- Dozvím se o potenciálních **61** JavaScript výjimek při kompilaci!
+- Dozvím se o potenciálních **61** JavaScript výjimkách při kompilaci! <img src="./assets/goodjob.gif" alt="JO vole" width="40px" />
 - Zbývá si pohlídat **18** výjimek za runtime-u
 
 ---
@@ -321,11 +325,11 @@ async function savePost(): Promise<boolean> {
 ```
 
 ---
-# Nápad: Co kdybychom nahradili výjimky něčím lepším?
+# Co kdybychom se zbavili výjimek v našem kódu?
 
-- Nízkoúrovňové funkce (`getInput`, `savePostToDb`, `sendPostViaEmail`) zabalí svůj kód do try/catch bloku a výjimky by "proměnili" v `null/undefined/false`
-- Co udělat s `null` a `undefined`?
-- Co udělat s `if (!...) return false` u řetězení operací (**WET**)?
+- Do funkcí `getInput`, `savePostToDb`, `sendPostViaEmail` přidáme try/catch blok, v catch bloku vrátíme `null/undefined/false`.
+    - Sloučili jsme **Unhappy Path** výjimek v našem kódu - nyní stačí `if (result) {...}`
+- Co udělat s `if (!...) return false` u řetězených operací (**WET**)?
 
 ```ts
 async function savePost(): Promise<boolean> {
@@ -340,7 +344,7 @@ async function savePost(): Promise<boolean> {
 }
 ```
 ---
-# Nápad: Co kdybychom nahradili výjimky něčím lepším?
+# Co kdybychom nahradili `null/undefined` v našem kódu?
 
 - Knihovna `ts-results-es` a `Option` místo `null/undefined`
 ```ts
@@ -369,9 +373,7 @@ async function savePost(): Promise<boolean> {
 <img src="./assets/some-2.png" alt="Some" width="60%" />
 
 ---
-# Nápad: Co kdybychom nahradili výjimky něčím lepším?
-
-- Nahradíme `null/undefined` a výjimky návratovým typem `Result`
+# Přidáme `Result` z `ts-results-es`
 
 ```ts
 import { Ok, Err, Result, Option, Some, None } from 'ts-results-es';
@@ -393,9 +395,7 @@ async function savePost(): Promise<Result<Post, "db error" | "email error" | "in
 ```
 
 ---
-# Nápad: Co kdybychom nahradili výjimky něčím lepším?
-
-- Zřetězíme operace pomocí `andThen`
+# Zřetězíme operace pomocí `andThen`
 
 ```ts
 import { Ok, Err, Result, Option, Some, None } from 'ts-results-es';
@@ -415,7 +415,7 @@ async function savePost(): Promise<Result<Post, "db error" | "email error" | "in
 ```
 
 ---
-# Happy ~~(Path)~~ Programátor
+# Jak tohle pomohlo?
 
 - Kde je unhappy a happy path?
 - Jak to pomhlo?
@@ -433,7 +433,7 @@ if (post.isOk()) {
 ```
 
 ---
-# Happy ~~(Path)~~ Programátor
+# Happy Programátor
 
 - Kde je unhappy a happy path?
 - Jak to pomhlo?
@@ -445,9 +445,8 @@ if (post.isOk()) {
 ---
 # Další kroky?
 
-- Projděte si prezentaci: https://github.com/lubosmato/fun-ts
-- Zítra si projděte examply v dokumentaci https://github.com/lune-climate/ts-results-es
-    - Dnes jsme jen lehce nakousli `ts-results-es`
+- Projděte si [example projekt](https://github.com/lubosmato/fun-ts) a [ts-results-es](https://github.com/lune-climate/ts-results-es#example)
+    - Dnes jsme jen lehce nakousli myšlenky z `ts-results-es`
 - Zakomponujte `ts-results-es` do svého kódu:
     - Začněte u malých částí
     - K nové featurce přidejte špetku refaktoringu pomocí `Option` nebo `Result`
