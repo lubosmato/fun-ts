@@ -418,7 +418,7 @@ async function savePost(): Promise<Result<Post, "db error" | "email error" | "in
 # Jak tohle pomohlo?
 
 - Kde je unhappy a happy path?
-- Jak to pomhlo?
+- Jak to pomohlo?
 
 ```ts
 const post = await savePost()
@@ -450,7 +450,7 @@ if (post.isOk()) {
 - Zakomponujte `ts-results-es` do svého kódu:
     - Začněte u malých částí
     - K nové featurce přidejte špetku refaktoringu pomocí `Option` nebo `Result`
-    - Ve vyšších úrovní abstrakce se můžete kdykoliv vrátit k výjimkám nebo `null | undefined` a dodržet zpětnou kompatbility
+    - Ve vyšších úrovní abstrakce se můžete kdykoliv vrátit k výjimkám nebo `null | undefined` a dodržet zpětnou kompatibility
 - Zajděte na limonádu/pivko s kolegy/kamarády a pobavte se o `ts-results-es`
 
 ---
