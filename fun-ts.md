@@ -1,9 +1,10 @@
 ---
 marp: true
-theme: gaia
+theme: default
 _class: invert
 paginate: true
 header: 'Happy ~~Path~~ programátor v TypeScriptu'
+# npx @marp-team/marp-cli@latest fun-ts.md --html -o public/index.html
 ---
 
 <style>
@@ -11,15 +12,27 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
   section:not(code) {
     font-family: Roboto;
   }
+  section.invert h1 {
+    color: white;
+  }
+  section.invert header {
+    color: #a0a0a0;
+  }
+  section header {
+    color: #606060;
+  }
   h1 {
     font-size: 1.5rem;
     margin: 0;
+    color: black;
   }
   section header, section footer {
-    padding: 0 1.5rem;
+    padding: 0 0.5rem;
   }
   section {
     padding: 1.5rem;
+    justify-content: start;
+    display: block;
   }
   img {
     max-width: 100%;
@@ -41,10 +54,26 @@ header: 'Happy ~~Path~~ programátor v TypeScriptu'
   }
   img {
     vertical-align: middle;
+    max-width: 100%;
   }
   code {
-    color: white;
-    background-color: #0f0f0f;
+    background-color: #d0d0d0;
+  }
+  p {
+    margin: 1em 0 0;
+  }
+  .hljs-string {
+    color: #016301;
+  }
+  .hljs-title.class_ {
+    color: #970000;
+    text-decoration: underline;
+  }
+  .hljs-keyword {
+    color: #c30000;
+  }
+  .hljs-title.function_ {
+    color: blue;
   }
 </style>
 
@@ -116,9 +145,9 @@ Jak **NE**nastavit TypeScript:
 {
   "compilerOptions": {
     "esModuleInterop": true, // zacházej s CommonJS/AMD/UMD moduly jako s ES6
-    "skipLibCheck": false, // kontroluj typy v .d.ts souborech
+    "skipLibCheck": false, // kontroluj typy .d.ts knihoven
     "allowJs": false,
-    "resolveJsonModule": true, // import a from "./a.json" -> souboru "bude mít typy" 
+    "resolveJsonModule": true, // import a from "./a.json" -> "bude mít typy" 
     "moduleDetection": "force", // všechno je modul
 
     "strict": true, // "vypíná" TS při false
@@ -222,14 +251,14 @@ done:
 
 function buildRobot() { 
   if (Math.random() < 0.5) {
-    e = new Error("no robot")
+    let e = new Error("no robot")
     goto err
   }
   buildHead()
 }
 function buildHead() { 
   if (Math.random() < 0.5) {
-    e = new Error("no head")
+    let e = new Error("no head")
     goto err
   }
   buildBrain()
