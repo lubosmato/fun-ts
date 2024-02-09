@@ -180,14 +180,14 @@ odd:
 
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">buildRobot</span>(<span class="hljs-params"></span>) { 
   <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &lt; <span class="hljs-number">0.5</span>) {
-    <span class="hljs-keyword">let</span> e = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;no robot&quot;</span>)
+    e = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;no robot&quot;</span>)
     goto err
   }
   <span class="hljs-title function_">buildHead</span>()
 }
 <span class="hljs-keyword">function</span> <span class="hljs-title function_">buildHead</span>(<span class="hljs-params"></span>) { 
   <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &lt; <span class="hljs-number">0.5</span>) {
-    <span class="hljs-keyword">let</span> e = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;no head&quot;</span>)
+    e = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;no head&quot;</span>)
     goto err
   }
   <span class="hljs-title function_">buildBrain</span>()

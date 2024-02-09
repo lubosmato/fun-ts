@@ -251,14 +251,14 @@ done:
 
 function buildRobot() { 
   if (Math.random() < 0.5) {
-    let e = new Error("no robot")
+    e = new Error("no robot")
     goto err
   }
   buildHead()
 }
 function buildHead() { 
   if (Math.random() < 0.5) {
-    let e = new Error("no head")
+    e = new Error("no head")
     goto err
   }
   buildBrain()
